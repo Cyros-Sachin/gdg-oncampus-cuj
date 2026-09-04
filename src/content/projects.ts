@@ -93,23 +93,23 @@ export const PROJECTS: ProjectItem[] = [
     liveUrl: "https://skill-mates-gafn.vercel.app/"
   },
   {
-    id: "fablekins",
-    title: "Fablekins",
+    id: "devdiary",
+    title: "DevDiary",
     summary:
       "A full-stack blogging platform built on the MVC pattern with full CRUD, session-based authentication and authorization, Express routing and middleware, and image uploads.",
     builders: "Shivansh",
     stack: ["Node.js", "Express.js", "MongoDB", "EJS", "Multer"],
-    liveUrl: "https://fablekins.vercel.app",
-    githubUrl: "https://github.com/metastab/Fablekins"
+    liveUrl: "https://blog-website-v1-0.onrender.com/",
   },
   {
     id: "arcade-survivor",
-    title: "2D Arcade Survival Game",
+    title: "Fablekins",
     summary:
       "A top-down arcade survival game built from scratch in vanilla JavaScript and HTML5 Canvas — no frameworks. Collect dots to level up while evading a ghost that speeds up each level, and grab golden PowerDots for a speed boost. Custom collision detection, sprite animation, camera tracking, and layered rendering, with keyboard and on-screen D-pad controls.",
     builders: "Bablu",
     stack: ["JavaScript", "HTML5 Canvas"],
-    liveUrl: ""
+    liveUrl: "https://fablekins.vercel.app",
+    githubUrl: "https://github.com/metastab/Fablekins"
   },
   {
     id: "hideinimages",
