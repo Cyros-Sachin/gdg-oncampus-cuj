@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function BuildPage() {
   return (
     <PageShell>
-      <BuildShowcase />
+      <BuildShowcase full />
     </PageShell>
   );
 }
