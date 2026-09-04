@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0F1115;
+  --ink-muted: #5F6368;
+  --surface: #FFFFFF;
+  --surface-alpha: rgba(255, 255, 255, 0.72);
+  --canvas: #F8F9FA;
+  --hairline: #E3E6EA;
+
+  --blue: #4285F4;
+  --red: #EA4335;
+  --yellow: #F9AB00;
+  --green: #34A853;
+
+  --shadow-sm: 0 1px 2px rgba(15, 17, 21, 0.06), 0 2px 6px rgba(15, 17, 21, 0.04);
+  --shadow-lg: 0 2px 8px rgba(15, 17, 21, 0.06), 0 24px 48px rgba(15, 17, 21, 0.10);
+
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+}
+
+.dark {
+  --ink: #F2F3F5;
+  --ink-muted: #9AA0A6;
+  --surface: #16181C;
+  --surface-alpha: rgba(22, 24, 28, 0.72);
+  --canvas: #0B0C0E;
+  --hairline: #26292E;
+
+  /* Brand hues at 92% opacity in dark mode so they don't vibrate against near-black */
+  --blue: rgba(66, 133, 244, 0.92);
+  --red: rgba(234, 67, 53, 0.92);
+  --yellow: rgba(249, 171, 0, 0.92);
+  --green: rgba(52, 168, 83, 0.92);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.45), 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--hairline);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--canvas);
+    color: var(--ink);
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-roboto), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism token helper */
+.glass-panel {
+  background-color: var(--surface-alpha);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* Typography Utility Classes based on Design Tokens */
+.font-display-xl {
+  font-size: clamp(56px, 8.5vw, 112px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.font-display {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.font-h2 {
+  font-size: 34px;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.font-h3 {
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.font-body-lg {
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.55;
+  max-width: 68ch;
+}
+
+.font-body {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.font-caption {
+  font-size: 14px;
+  font-weight: 450;
+  letter-spacing: 0.005em;
+  line-height: 1.45;
+}
+
+.font-code {
+  font-family: var(--font-code-mono), monospace;
+}
+
+/* Spring motion utility */
+.transition-spring {
+  transition-timing-function: var(--ease-spring);
+  transition-duration: var(--dur-base);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
